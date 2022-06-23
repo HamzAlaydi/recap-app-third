@@ -1,0 +1,9 @@
+<h1>Posts Titles xD</h1>
+
+<div *ngIf="errors.length == 0; else showErrors">
+  <ul *ngFor="let post of postsTitle; index as i">
+    <li (click)="handleClick(i)">{{ i + 1 }} : {{ post }} going well</li>
+  </ul>
+</div>
+
+<ng-template #showErrors> {{ errors }} </ng-template>
