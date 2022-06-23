@@ -9,7 +9,7 @@ import { IPosts } from './posts';
 export class PostsService {
   constructor(private http: HttpClient) {}
   private _url = 'https://jsonplaceholder.typicode.com/posts';
-  public path: number = 0;
+  public path!: number;
 
   //Create Subject to create method passPath ..
   private _pathSource = new Subject<number>();
@@ -31,7 +31,7 @@ export class PostsService {
     );
   }
 
-  //get data for specif element
+  //get data for specific element
 
   getElementData(): Observable<IPosts> {
     let stringifyPath = this.path.toString();
